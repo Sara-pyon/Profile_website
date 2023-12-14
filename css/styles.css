@@ -12,7 +12,7 @@
     /* ===============Colours=============================== */
     --color-primary: #ffb434;
     --color-secondary: #FBF8F0;
-    --color-border: #d3d7ee;
+    --color-border: #fdebbd;
     --color-text: #797a80;
     --color-heading: #000;
     /* =============== Font and Typography=============================== */
@@ -72,6 +72,7 @@ a{
     max-width: 1120px;
     margin-inline: auto;
     padding-inline: 1rem;
+    overflow: hidden;
 }
 section{
     padding-block: 5rem;
@@ -84,7 +85,7 @@ img{
     height: auto;
 }
 .icon{
-    width: 50px;
+    width: 40px;
 }
 .grid{
     display: grid;
@@ -230,6 +231,9 @@ img{
 }
 
 /* =============================== ABOUT ME ====================================== */
+.aboutMe__detail{
+    max-width: 50rem;
+}
 .aboutMe__container{
     padding-inline: 1rem;
     display: flex;
@@ -240,10 +244,10 @@ img{
 .aboutMe__header{
     text-align: center;
 }
-.aboutMe__heading{
+.section__heading{
     display: inline-block;
 }
-.aboutMe__heading::after{
+.section__heading::after{
     content: '';
     width: 100%;
     height: 3px;
@@ -251,7 +255,7 @@ img{
     display: block;
 }
 .aboutMe__body{
-    padding-block: 3rem;
+    padding-block: 5rem;
 }
 .aboutMe__introduce{
     display: flex;
@@ -266,28 +270,158 @@ img{
 .aboutMe__img{
    display: none;
 }
-.aboutMe__footer-icons{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    column-gap: 2rem;
-}
+
 /* anoutMe detail */
 .aboutMe__detail{
+    width: 100%;
+    margin-bottom: 5rem;
+}
+.aboutMe__detail-heading{
     grid-template-columns: repeat(2, 1fr);
+}
+.aboutMe__history,
+.aboutMe__education{
+    padding-block: 1rem;
+    border-radius: 10px;
+    transition: all .4s;
+}
+.aboutMe__history{
+    background: var(--color-primary);
+    color: #fff;
 }
 .aboutMe__detail-title{
     text-align: center;
     font-weight: var(--fontweight-regular);
     cursor: pointer;
 }
-.aboutMe__detail-title > i{
+.aboutMe__detail-title> i{
     font-size: 2rem;
 }
+.aboutMe__detail-body{
+    margin-top: 1rem;
+    padding-block: 1rem;
+    width: 100%;
+    height: 31rem;
+    position: relative;
+}
+.aboutMe__detail-body::after{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    content: '';
+    display: block;
+    width: 2px;
+    height: 100%;
+    background: var(--color-primary);
+}
 
+.aboutMe__detail-1{
+    grid-template-columns: repeat(2,1fr);
+    width: 100%;
+    column-gap: 5px;
+    transition: all .4s;
+    overflow: hidden;
+}
+.aboutMe__detail-2{
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, auto);
+    column-gap: 5px;
+    overflow: hidden;
+}
+
+.aboutMe__data:nth-child(2){
+    grid-column: 2/3;
+    grid-row: 2/3;
+    flex-wrap: wrap;
+    justify-content: end;
+    flex-direction: row;
+    margin-left: 0.5rem;
+}
+.aboutMe__data:nth-child(3){
+    grid-column: 1/2;
+    grid-row: 3/-2;
+}
+.aboutMe__data{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.aboutMe__data-main{
+    color: #000;
+    font-size: var(--fontsize-small);
+}
+.aboutMe__data-sub{
+    padding-top: 0.5rem;
+    font-size: var(--fontsize-small);
+}
+.dot{
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: var(--color-primary);
+    border-radius: 100%;
+    box-shadow: 0px 0px 5px hsla(37,100%,60%,0.5);
+}
+.dot-1,
+.dot-3{
+    right: -10px;
+    top: 1rem;
+}
+.dot-2{
+    left: -12px;
+    top: 1rem
+}
+.aboutMe__detail-2{
+    height: 0;
+    transition: all .4s;
+}
+.show-education .aboutMe__detail-2{
+    height: 100%;
+}
+.show-education .aboutMe__detail-1{
+    height: 0;
+}
+.show-education .aboutMe__history{
+    background: transparent;
+    color: #000;
+}
+.show-education .aboutMe__education{
+    background: var(--color-primary);
+    color: #fff;
+}
+
+/* aboutMe footer */
+.aboutMe__footer{
+    width: 100%;
+    padding-inline: 1rem;
+    padding-block: 1rem;
+}
+.aboutMe__footer-icons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    column-gap: 2rem;
+    height: 7rem;
+}
 
 /* =============================== PORTFOLIO ====================================== */
+.portfolio__header{
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.portfolio__cards{
+    padding-block: 3rem;
+}
+.portfolio__card{
+    width: 28rem;
+    border: 2px solid var(--color-border);
+    border-radius: 5px;
+    overflow: hidden;
+    padding: 1rem;
+}
 /* =============================== CONTACT ME ====================================== */
 /* =============================== FOOTER ====================================== */
 

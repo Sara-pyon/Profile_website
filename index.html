@@ -40,7 +40,7 @@
                 <h2 class="home__greeding">Hello, this is</h2>
                 <h1 class="home__name">Sara Komatsu</h1>
                 <button class="btn home__btn">
-                    <a href="#">Learn More
+                    <a href="#aboutMe">Learn More
                         <i class="ri-arrow-right-line home__btn-arrow"></i>
                     </a>
                 </button>
@@ -51,10 +51,10 @@
         </div>
     </section>
     <!-- =====================ABOUT ME====================== -->
-    <section class="aboutMe">
+    <section class="aboutMe" id="aboutMe">
         <div class="aboutMe__container container">
             <div class="aboutMe__header">
-                <h2 class="aboutMe__heading">About Me</h2>
+                <h2 class="aboutMe__heading section__heading">About Me</h2>
             </div>
             <div class="aboutMe__body">
                 <div class="aboutMe__introduce">
@@ -72,44 +72,57 @@
                 </div>
                 <img src="image/profil-img-2.png" alt="profile image" class="aboutMe__img">
             </div>
-            <div class="aboutMe__detail grid">
-                <div class="aboutMe__detail-2">
-                    <h3 class="aboutMe__history aboutMe__detail-title">
+            <div class="aboutMe__detail" id="aboutMe-detail">
+                <div class="aboutMe__detail-heading grid">
+                    <h3 class="aboutMe__history aboutMe__detail-title" id="history">
                         <i class="ri-plane-line"></i>
                         History
                     </h3>
-                    <div class="aboutMe__data">
-                        <p class="aboutMe__data-main">Moved to Calgary to experience the working holiday in Canada</p>
-                    </div>
-                </div>
-                <div class="aboutMe__detail-1">
-                    <h3 class="aboutMe__history aboutMe__detail-title" id="education">
+                    <h3 class="aboutMe__education aboutMe__detail-title" id="education">
                         <i class="ri-graduation-cap-fill"></i>
                         Education
                     </h3>
-                    <div class="aboutMe__data">
-                        <p class="aboutMe__data-main">Department of <br>
-                            Mathematical Sciences</p>
-                        <p class="boutMe__data-sub">Japan - Univercity<br>
-                            2019-2023</p>
+                </div>
+                <div class="aboutMe__detail-body">
+                    <div class="aboutMe__detail-1 grid">
+                        <div class="aboutMe__data">
+                            <p class="aboutMe__data-main">Moved to Calgary to experience the working holiday in Canada</p>
+                            <p class="aboutMe__data-sub">Canada - Calgary <br>
+                                Sep 2023 ~</p>
+                            <div class="dot-1 dot"></div>
+                        </div>
+                        <div></div>
                     </div>
-                    <div class="aboutMe__data">
-                        <p class="aboutMe__data-main">HTML,CSS,Javascript<br>
-                            ultimate courses </p>
-                        <p class="boutMe__data-sub">OnlineCourses <br>
-                             -Mosh Hamadani<br>
-                            2023 Sep - 2023 Nov</p>
-                    </div>
-                    <div class="aboutMe__data">
-                        <p class="aboutMe__data-main">React ultimate courses<br>
-                            Mathematical Sciences</p>
-                        <p class="boutMe__data-sub">OnlineCourse<br>
-                             -Mosh Hamadani <br>
-                            2023 Dec ~</p>
+                    <div class="aboutMe__detail-2 grid">
+                        <div class="aboutMe__data">
+                            <p class="aboutMe__data-main">Department of <br>
+                                Mathematical Sciences</p>
+                            <p class="aboutMe__data-sub">Japan - Univercity<br>
+                                2019-2023</p>
+                            <div class="dot-1 dot"></div>
+                        </div>
+                        <div class="aboutMe__data">
+                            <div>
+                                <p class="aboutMe__data-main">HTML , CSS, Javascript<br>
+                                    ultimate courses </p>
+                                <p class="aboutMe__data-sub">OnlineCourses <br>
+                                     -Mosh Hamadani<br>
+                                    2023 Sep - 2023 Nov</p>
+                            </div>
+                            <div class="dot-2 dot"></div>
+                        </div>
+                        <div class="aboutMe__data">
+                            <p class="aboutMe__data-main">React ultimate courses<br>
+                                Mathematical Sciences</p>
+                            <p class="aboutMe__data-sub">OnlineCourse<br>
+                                 -Mosh Hamadani <br>
+                                2023 Dec ~</p>
+                            <div class="dot-3 dot"></div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <!-- <div class="aboutMe__footer" id="aboutMe">
+            <div class="aboutMe__footer" id="aboutMe">
                 <h3 class="aboutMe__footer-title">My skills are</h3>
                 <div class="aboutMe__footer-icons">
                     <svg class="icon">
@@ -126,10 +139,39 @@
                     </svg>
                     <img src="image/python-svgrepo-com.svg" alt="python icon" class="icon">
                 </div>
-            </div> -->
+            </div>
         </div>
     </section>
-    <!-- =====================SCROLL UP====================== -->
+    <!-- =====================Portfolio====================== -->
+    <section class="portfolio" id="portfolio">
+        <div class="portfolio__container container">
+            <div class="portfolio__header">
+                <h2 class="portfolio__heading section__heading">My Created Websites</h2>
+            </div>
+            <div class="portfolio__cards">
+                <div class="portfolio__card">
+                    <img src="image/Portfolio-1.png" alt="" class="portfolio__img">
+                    <h3 class="portfolio__title">e-book website</h3>
+                    <p class="portfolio__text">Designed by Bedimcode</p>
+                </div>
+            </div>
+            <div class="portfolio__cards">
+                <div class="portfolio__card">
+                    <img src="image/Portfolio-1.png" alt="" class="portfolio__img">
+                    <h3 class="portfolio__title">e-book website</h3>
+                    <p class="portfolio__text">Designed by Bedimcode</p>
+                </div>
+            </div>
+            <div class="portfolio__cards">
+                <div class="portfolio__card">
+                    <img src="image/Portfolio-1.png" alt="" class="portfolio__img">
+                    <h3 class="portfolio__title">e-book website</h3>
+                    <p class="portfolio__text">Designed by Bedimcode</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
     <!-- =====================SCROLL UP====================== -->
 
      <!-- =====================RELAX JS====================== -->
