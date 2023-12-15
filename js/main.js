@@ -33,9 +33,9 @@ websites.forEach(item => {
         </div>
         <h3 class="portfolio__title">${item.title}</h3>
         <p class="portfolio__text">${item.text}</p>
-        <button class="portfolio__btn">
-            <a target="_blank" href="${item.url}">
-                visit</a></button>
+        <a target="_blank" href="${item.url}" class='portfolio__link'>
+            <button class="portfolio__btn">
+                visit</button></a>
     </div>
     `
 })
@@ -84,14 +84,12 @@ const sections = document.querySelectorAll('.section');
 
 const linkActive = () => {
 
-    const scrollY = window.pageYOffset;
-
     sections.forEach(current => {
         const currentHeight = current.offsetHeight,
               currentTop = current.offsetTop,
               currentId = current.getAttribute('id'),
               currentClass = document.querySelector('.header__menu a[href*=' + currentId + ']');
-              if(scrollY >= currentTop && scrollY < currentTop + currentHeight){
+              if(window.scrollY >= currentTop && window.scrollY < currentTop + currentHeight){
                 currentClass.classList.add('active-link');
               }else{
                 currentClass.classList.remove('active-link');
@@ -104,10 +102,9 @@ window.addEventListener('scroll', linkActive);
 // ===================== link Active ========================================
 
 const scrollUp = () => {
-    const scrollY = window.scrollY;
     const scrollUp = document.getElementById('scrollUp');
 
-    scrollY >= 30 ? scrollUp.classList.add('show-scrollUp') :
+    window.scrollY >= 30 ? scrollUp.classList.add('show-scrollUp') :
                     scrollUp.classList.remove('show-scrollUp');
 }
 

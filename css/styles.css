@@ -452,12 +452,12 @@ a{
     width: 20rem;
     border: none;
     padding-block: 1rem;
-    margin-inline: auto;
     margin-top: 2rem;
     cursor: pointer;
-}
-.portfolio__btn > a{
     color: #fff;
+}
+.portfolio__link{
+    margin-inline: auto;
 }
 .portfolio__img{
     width: 100%;
