@@ -15,6 +15,7 @@
     --color-border: #fdebbd;
     --color-text: #797a80;
     --color-heading: #000;
+    --color-icon:  #f8a514;
     /* =============== Font and Typography=============================== */
     --fontstyle-primary: 'Montserrat', sans-serif;
     --fontstyle-secondary: 'Inknut Antiqua', serif;
@@ -75,7 +76,7 @@ a{
     overflow: hidden;
 }
 section{
-    padding-block: 5rem;
+    padding-block: 7rem;
 }
 i{
     cursor: pointer;
@@ -90,6 +91,10 @@ img{
 .grid{
     display: grid;
 }
+a{
+    outline: none;
+}
+
 /* =============================== NAV & HEADER ====================================== */
 .header{
     position: fixed;
@@ -104,9 +109,12 @@ img{
     padding-inline: 1rem;
     z-index: var(--z-fixed);
 }
+
 .header__logo{
+    display: inline-block;
     background: var(--color-primary);
     font-size: 2rem;
+    padding: 0.4rem;
     font-family: var(--fontstyle-secondary);
 }
 .header__logo > a{
@@ -117,17 +125,20 @@ img{
     font-weight: bold;
     color: var(--color-heading);
 }
-.header__menu{
-    background: var(--color-secondary);
-    position: fixed;
-    left: 0;
-    top: -100%;
-    width: 100%;
-    padding-block: 4rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: all .6s;
+
+@media screen and (max-width: 1024px) {
+     .header__menu{
+        background: var(--color-secondary);
+        position: fixed;
+        left: 0;
+        top: -100%;
+        width: 100%;
+        padding-block: 4rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all .6s;
+    }
 }
 .header__list{
     display: flex;
@@ -144,7 +155,7 @@ img{
     height: 2rem;
 }
 
-.header__item::after{
+.header__item>a::after{
     content: '';
     display: block;
     width: 0;
@@ -152,7 +163,8 @@ img{
     background: #ffb434;
     transition: width .5s;
 }
-.header__item:hover::after{
+.header__item > a:hover::after,
+.active-link{
     width: 50%;
 }
 .header__close{
@@ -231,9 +243,6 @@ img{
 }
 
 /* =============================== ABOUT ME ====================================== */
-.aboutMe__detail{
-    max-width: 50rem;
-}
 .aboutMe__container{
     padding-inline: 1rem;
     display: flex;
@@ -452,14 +461,13 @@ img{
 }
 .portfolio__img{
     width: 100%;
-    height: 25rem;
     position: relative;
 }
 .portfolio__img>img{
-    height: 25rem;
     width: 100%;
     object-fit: cover;
-    object-position: 0px -1px;
+    object-position: 0 -1px;
+    border-radius: 5px;
 }
 .portfolio__git-div{
     position: absolute;
@@ -498,19 +506,177 @@ img{
     transform: translateY(-80px);
 }
 /* =============================== CONTACT ME ====================================== */
-/* =============================== FOOTER ====================================== */
+.contact__header{
+    text-align: center;
+}
+.contact__list{
+   width: 25rem;
+   margin-inline: auto;
+   padding-block: 2rem;
+}
+.contact__item{
+    grid-template-columns: 30px 1fr;
+    column-gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    padding-left: 3rem;
+    padding-bottom: 1rem;
+}
+.contact__icon{
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: var(--color-icon);
+    outline: none;
+}
+/* =============================== SCROLL UP====================================== */
+.scrollUp{
+    position: fixed;
+    right: 1.5rem;
+    bottom: -100%;
+    background: var(--color-secondary);
+    border: 1.8px solid var(--color-text);
+    border-radius: 5px;
+    padding-inline: 0.2rem;
+    padding-block: 0.2rem;
+    transition: bottom .4s;
+    z-index: var(--z-fixed);
+}
+.scrollUp > a{
+    font-size: 2rem;
+    font-weight: 500;
+    color: #000;
+}
+.scrollUp:hover {
+    bottom: 4rem;
+}
+.show-scrollUp{
+    bottom: 3rem;
+}
 
 /* =============================== BREAKPOINTS  ====================================== */
+@media screen and (min-width: 460px) {
+    .portfolio__card{
+        width: 45rem;
+    }
+    .portfolio__img,
+    .portfolio__img>img{
+        height: 28rem;
+    }
+    
+}
+@media screen and (min-width: 550px) {
+    .aboutMe__footer{
+        max-width: 700px;
+    }
+    .aboutMe__footer-icons{
+        column-gap: 4rem;
+    }
+    .aboutMe__detail{
+        width: 50rem;
+    }
+}
+@media screen and (min-width: 1000px) {
+    .portfolio__img,
+    .portfolio__img>img{
+        height: 30rem;
+    }
+}
+@media screen and (min-width: 1024px) {
+    h1{
+        font-size: 6rem;
+    }
+    h2{
+        font-size: 3rem;
+    }
+    h3{
+        font-size: 2.5rem;
+    }
+    p{
+        font-size: 2.0rem;
+    }
+    a{
+        font-size: 2rem;
+    }
+    .btn{
+        width: 25rem;
+        padding-block: 2rem;
+    }
+    .home__btn-arrow{
+        font-size: 2.8rem;
+        top: 1.55rem;
+        right: 4rem;
+    }
+    .home__btn:hover .home__btn-arrow{
+        right: 3.4rem;
+    }
+    .header__close,
+    .header__open{
+        display: none;
+    }
+    .header__list{
+        flex-direction: row;
+        column-gap: 3rem;
+    }
+    .home{
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-/* For medium devices 576px */
+    }
+    .home__bg{
+        width: 25rem;
+    }
+    .home__container{
+        grid-template-columns: 1fr 2fr;
+        column-gap: 2rem;
+    }
+    .home__img{
+        width: 20rem;
+        order: -1;
+    }
+    .home__body{
+        text-align: start;
+    }
+    .aboutMe__detail{
+        padding-block: 5rem;
+        width: 100rem;
+        grid-template-columns: 2fr 1fr;
+        column-gap: 2rem;
+        padding-inline: 2rem;
+    }
+    .icon{
+        width: 5.5rem
+    }
+    .aboutMe__data-main{
+        font-size: 2.1rem;
+    }
+    .aboutMe__data-sub{
+        font-size: 1.9rem;
+    }
+    .aboutMe__data:nth-child(2){
+        justify-content: center;
+    }
+    .aboutMe__img{
+        display: initial;
+        width: 25rem;
+        justify-self: center;
+        align-self: center;
+        border-radius: 10px;
+    }
+    .contact__list{
+        padding-top: 5rem;
+        width: 100%;
+        grid-template-columns: repeat(3,1fr);
+        margin: 0;
+    }
+    .contact__item{
+        justify-content: center;
+        align-items: center;
+    }
+}
 
-/* For medium device 768px */
-
-/* For large devices  1024px*/
-
-/* For large devices  1200px*/
-
-/* For 4k devices 1400px*/
-
-
-
+/* Header BackgroundColor */
+.header-shadow{
+    background: var(--color-secondary);
+    box-shadow: 0 -3px 20px hsl(0, 0%, 29%, 0.2);
+}

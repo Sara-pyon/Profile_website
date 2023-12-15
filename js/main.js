@@ -50,7 +50,8 @@ portfolioCards.innerHTML = portfolioHTML;
 
 // ===================== Portfolio Swiper ========================================
 const swiperHome = new Swiper('.portfolio__swiper', {
-    spaceBetween: 10,
+    loop: 'true',
+    spaceBetween: 15,
     grapCursor: true,
     slidesPerView: 'auto',
     centeredSlides: 'auto',
@@ -58,5 +59,56 @@ const swiperHome = new Swiper('.portfolio__swiper', {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
       },
-
+      breakpoints: {
+        1000: {
+            slidesPerView: 2,
+            centeredSlides: false,
+        } 
+    }
   });
+
+// ===================== Header Shadow ========================================
+const header = document.getElementById('header');
+
+const headerScroll = () => {
+    const aboutMe = document.getElementById('aboutMe'),
+          aboutTop = aboutMe.offsetTop;
+    window.scrollY >= aboutTop ? header.classList.add('header-shadow') :
+                                 header.classList.remove('header-shadow');
+}
+
+window.addEventListener('scroll', headerScroll);
+
+// ===================== link Active ========================================
+const sections = document.querySelectorAll('.section');
+
+const linkActive = () => {
+
+    const scrollY = window.pageYOffset;
+
+    sections.forEach(current => {
+        const currentHeight = current.offsetHeight,
+              currentTop = current.offsetTop,
+              currentId = current.getAttribute('id'),
+              currentClass = document.querySelector('.header__menu a[href*=' + currentId + ']');
+              if(scrollY >= currentTop && scrollY < currentTop + currentHeight){
+                currentClass.classList.add('active-link');
+              }else{
+                currentClass.classList.remove('active-link');
+              }
+    })
+}
+
+window.addEventListener('scroll', linkActive);
+
+// ===================== link Active ========================================
+
+const scrollUp = () => {
+    const scrollY = window.scrollY;
+    const scrollUp = document.getElementById('scrollUp');
+
+    scrollY >= 30 ? scrollUp.classList.add('show-scrollUp') :
+                    scrollUp.classList.remove('show-scrollUp');
+}
+
+window.addEventListener('scroll', scrollUp);
