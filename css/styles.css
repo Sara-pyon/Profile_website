@@ -87,6 +87,11 @@ img{
 }
 .icon{
     width: 40px;
+    cursor: pointer;
+    transition: transform .4s;
+}
+.icon:hover{
+    transform: translateY(-10px);
 }
 .grid{
     display: grid;
@@ -155,7 +160,7 @@ a{
     height: 2rem;
 }
 
-.header__item>a::after{
+.header__link::after{
     content: '';
     display: block;
     width: 0;
@@ -163,8 +168,8 @@ a{
     background: #ffb434;
     transition: width .5s;
 }
-.header__item > a:hover::after,
-.active-link{
+.header__link:hover::after,
+.active-link::after {
     width: 50%;
 }
 .header__close{
@@ -294,7 +299,7 @@ a{
     border-radius: 10px;
     transition: all .4s;
 }
-.aboutMe__history{
+.aboutMe__education{
     background: var(--color-primary);
     color: #fff;
 }
@@ -328,8 +333,8 @@ a{
     grid-template-columns: repeat(2,1fr);
     width: 100%;
     column-gap: 5px;
-    transition: all .4s;
     overflow: hidden;
+    transition: all .4s;
 }
 .aboutMe__detail-2{
     width: 100%;
@@ -337,6 +342,7 @@ a{
     grid-template-rows: repeat(3, auto);
     column-gap: 5px;
     overflow: hidden;
+    transition: all .4s;
 }
 
 .aboutMe__data:nth-child(2){
@@ -382,21 +388,21 @@ a{
     left: -12px;
     top: 1rem
 }
-.aboutMe__detail-2{
+.aboutMe__detail-1{
     height: 0;
     transition: all .4s;
 }
-.show-education .aboutMe__detail-2{
+.show-education .aboutMe__detail-1{
     height: 100%;
 }
-.show-education .aboutMe__detail-1{
+.show-education .aboutMe__detail-2{
     height: 0;
 }
-.show-education .aboutMe__history{
+.show-education .aboutMe__education{
     background: transparent;
     color: #000;
 }
-.show-education .aboutMe__education{
+.show-education .aboutMe__history{
     background: var(--color-primary);
     color: #fff;
 }
@@ -624,24 +630,27 @@ a{
 
     }
     .home__bg{
-        width: 25rem;
+        width: 30rem;
     }
     .home__container{
-        grid-template-columns: 1fr 2fr;
-        column-gap: 2rem;
+        grid-template-columns: 1fr 3fr;
+        column-gap: 8rem;
     }
     .home__img{
-        width: 20rem;
+        width: 25rem;
         order: -1;
     }
     .home__body{
         text-align: start;
     }
+    .aboutMe__detail-body{
+        max-width: 55rem;
+    }
     .aboutMe__detail{
         padding-block: 5rem;
         width: 100rem;
-        grid-template-columns: 2fr 1fr;
-        column-gap: 2rem;
+        display: flex;
+        flex-direction: row;
         padding-inline: 2rem;
     }
     .icon{
@@ -658,9 +667,12 @@ a{
     }
     .aboutMe__img{
         display: initial;
-        width: 25rem;
-        justify-self: center;
-        align-self: center;
+        flex-grow: 1; 
+        text-align: end;
+    }
+    .aboutMe__img > img{
+        margin-top: 3rem;
+        width: 27rem;
         border-radius: 10px;
     }
     .contact__list{

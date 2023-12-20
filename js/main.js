@@ -12,8 +12,8 @@ const historyBtn = document.getElementById('history'),
       educationBtn = document.getElementById('education'),
       detailBody = document.getElementById('aboutMe-detail');
 
-      historyBtn.addEventListener('click', () => detailBody.classList.remove('show-education'));
-      educationBtn.addEventListener('click', () => detailBody.classList.add('show-education'));
+      educationBtn.addEventListener('click', () => detailBody.classList.remove('show-education'));
+      historyBtn.addEventListener('click', () => detailBody.classList.add('show-education'));
 
 // ===================== Portfolio Cards ========================================
 const portfolioCards = document.getElementById('portfolio-cards');
@@ -99,7 +99,7 @@ const linkActive = () => {
 
 window.addEventListener('scroll', linkActive);
 
-// ===================== link Active ========================================
+// ===================== Scroll Up Btn ========================================
 
 const scrollUp = () => {
     const scrollUp = document.getElementById('scrollUp');

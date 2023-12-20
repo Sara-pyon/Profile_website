@@ -1,11 +1,11 @@
 export const websites = [{
-    title: "E-book website",
+    title: "E-book Website",
     image: "image/Portfolio-1.png",
     text: 'Designed by Bedimcode',
     url: "https://e-bookwebsite.netlify.app/",
     github: "https://github.com/Sara-pyon/e-book_website"
 },{
-    title: "Christmas website",
+    title: "Christmas Website",
     image: "image/Portfolio-2.png",
     text: 'Designed by Bedimcode',
     url: 'https://main--christmas-websitebysara.netlify.app/',
@@ -17,13 +17,13 @@ export const websites = [{
     url: 'https://youtube-sidebar.netlify.app/',
     github: '',
 },{
-    title: "Travel website",
+    title: "Travel Website",
     image: "image/Portfolio-4.png",
     text: 'Designed by Bedimcode',
     url: 'https://6578bae32a5c070008dddebd--travel-websitebysara.netlify.app/',
     github: 'https://github.com/Sara-pyon/Travel_website'
 },{
-    title: "Moshify website",
+    title: "Moshify Website",
     image: "image/Portfolio-5.png",
     text: 'Designed by Mosh Hamadani',
     url: 'https://654af43db57e610008cca27b--moshfiedbysara.netlify.app/',
