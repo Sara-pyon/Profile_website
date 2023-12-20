@@ -593,6 +593,7 @@ a{
     position: absolute;
     top: -2px;
     color: var(--color-text);
+    transition: color .4s;
 }
 .footer__link:hover{
     color: #f8a514;
