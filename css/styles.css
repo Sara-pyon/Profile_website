@@ -559,6 +559,31 @@ a{
     bottom: 3rem;
 }
 
+/* =============================== FOOTER ====================================== */
+.footer__container{
+    padding-inline: 2rem;
+    padding-block: 5rem;
+}
+.footer__header{
+    padding-bottom: 1.5rem;
+}
+.footer__heading{
+    font-size: 2.2rem;
+}
+.footer__name{
+    font-size: 1.8rem;
+    color: #000;
+    font-weight: 500;
+    padding-left: 2rem;
+    padding-bottom: 1rem;
+}
+.footer__uni{
+    text-align: end;
+}
+.footer__mail{
+    padding: 1.2rem 2rem;
+    color: var(--color-text);
+}
 /* =============================== BREAKPOINTS  ====================================== */
 @media screen and (min-width: 460px) {
     .portfolio__card{
@@ -567,6 +592,10 @@ a{
     .portfolio__img,
     .portfolio__img>img{
         height: 28rem;
+    }
+    .footer__uni{
+        text-align: initial;
+        padding-left: 20rem;
     }
     
 }
@@ -684,6 +713,24 @@ a{
     .contact__item{
         justify-content: center;
         align-items: center;
+    }
+    .footer__heading{
+        font-size: 2.5rem;
+    }
+    .footer__reference{
+        display: flex;
+        align-items: end;
+    }
+    .footer__name{
+        font-size: 2rem;
+        padding-bottom: 0;
+    }
+    .footer__uni{
+        font-size: 1.8rem;
+        padding-left: 1.5rem;
+    }
+    .footer__mail{
+        font-size: 1.8rem;
     }
 }
 
