@@ -15,7 +15,7 @@ export const websites = [{
     image: "image/Portfolio-3.png",
     text: 'Designed by Bedimcode',
     url: 'https://youtube-sidebar.netlify.app/',
-    github: '',
+    github: 'https://github.com/Sara-pyon/YoutubeSideBar2',
 },{
     title: "Travel Website",
     image: "image/Portfolio-4.png",
