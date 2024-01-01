@@ -109,3 +109,81 @@ const scrollUp = () => {
 }
 
 window.addEventListener('scroll', scrollUp);
+
+// ===================== Footer References ========================================
+
+const references = document.querySelector('.footer__list'),
+      reference = [{
+        name: 'Takehisa Hasegawa',
+        post: 'Professor',
+        from: '(Ibaraki University, Ibaraki, Japan)',
+        url: 'http://takehisahasegawa.sci.ibaraki.ac.jp/',
+        email: 'takehisa.hasegawa.sci@vc.ibaraki.ac.jp'
+      },{
+        name: 'Zoey Wang',
+        post: 'Restaurant Manager',
+        from: '(Honjin Izakaya, Calgary, Canada)',
+        mobile: '+1 587-888-3873',
+        email: 'zoey.kekitchen@gmail.com'
+      },{
+        name: 'Dan Osborne',
+        post: 'Host Father (School Principal)',
+        from: '(Calgary, Canada)',
+        mobile: '+1 403-919-0819',
+        email: 'dan56@shaw.ca'
+      }];
+let referencesHTML = '';
+
+reference.forEach(item => {
+    if(item.url){
+
+        referencesHTML += `
+    
+    <div class="footer__item">
+        <div class="footer__reference">
+            <a href="${item.url}" target="_blank"><i class="ri-link footer__link"></i></a>
+            <div class="footer__reference">
+                <h4 class="footer__name">${item.name}</h4>
+                <h4 class="footer__post">${item.post}</h4>
+            </div>
+        </div>
+        <div class="footer__contact">
+            <p class="footer__from">${item.from}</p>
+            <div class="footer__mail-container">
+                <a href="mailto:${item.email}">
+                    <i class="ri-mail-line footer__icon"></i>
+                </a>
+                <p class="footer__mail">${item.email}</p>
+            </div>
+        </div>
+    </div>
+    `
+    }else{
+        referencesHTML += `
+    
+    <div class="footer__item">
+        <div class="footer__reference">
+            <h4 class="footer__name">${item.name}</h4>
+            <h4 class="footer__post">${item.post}</h4>
+        </div>
+        <div class="footer__contact">
+            <p class="footer__from">${item.from}</p>
+            <div class="footer__mobile-container">
+                <i class="ri-phone-line footer__icon"></i>
+                <p class="footer__mobile">${item.mobile}</p>
+            </div>
+            <div class="footer__mail-container">
+                <a href="mailto:${item.email}">
+                    <i class="ri-mail-line footer__icon"></i>
+                </a>
+                <p class="footer__mail">${item.email}</p>
+            </div>
+            
+        </div>
+    </div>
+    `
+    }
+    
+})
+
+references.innerHTML = referencesHTML;
